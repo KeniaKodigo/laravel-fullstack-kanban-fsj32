@@ -1,0 +1,9 @@
+body{
+    background-color: rgb(117, 81, 68);
+    color: #fff;
+}
+
+div{
+    padding: 1rem;
+    border: 1px solid #000;
+}

@@ -1,0 +1,184 @@
+body {
+    background: #f7f9fa;
+    font-family: 'Inter', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.navbar {
+    background: #f5f7f8;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    height: 64px;
+    border-bottom: 1px solid #ececec;
+    justify-content: space-between;
+}
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+.logo {
+    width: 40px;
+    height: 40px;
+    background: #2563eb;
+    border-radius: 8px;
+    margin-right: 24px;
+}
+.nav-link {
+    color: #222;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+.nav-link.active, .nav-link:hover {
+    background: #e7f0ff;
+    color: #2563eb;
+}
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+.avatar {
+    width: 32px;
+    height: 32px;
+    background: #ececec;
+    border-radius: 50%;
+}
+.bell {
+    font-size: 20px;
+    color: #b0b4b9;
+}
+.container {
+    max-width: 1200px;
+    margin: 40px auto 0 auto;
+    padding: 0 24px;
+}
+.title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #222;
+}
+.subtitle {
+    font-size: 18px;
+    color: #6b7280;
+    margin-bottom: 30px;
+}
+.kanban-board {
+    display: flex;
+    gap: 32px;
+}
+.kanban-column {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+    padding: 24px;
+    flex: 1;
+    min-width: 260px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.kanban-column h3 {
+    margin: 0 0 12px 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #222;
+}
+.kanban-card {
+    background: #f7f9fa;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 0;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+}
+.kanban-card.completed {
+    text-decoration: line-through;
+    color: #888;
+}
+.kanban-card strong {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 4px;
+    color: #222;
+}
+.kanban-card small {
+    color: #6b7280;
+}
+
+/** Estilos de formularios */
+.form-container {
+    max-width: 600px;
+    margin: 48px auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    padding: 40px 32px 32px 32px;
+}
+.form-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 32px;
+    color: #222;
+}
+.form-label {
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: #222;
+    display: block;
+}
+.form-input, .form-select, .form-textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background: #f7f9fa;
+    font-size: 1rem;
+    margin-bottom: 22px;
+    transition: border 0.2s;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+    border-color: #2563eb;
+    outline: none;
+    background: #fff;
+}
+.form-textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 16px;
+}
+.btn-cancel {
+    background: #f3f4f6;
+    color: #444;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 24px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.btn-cancel:hover {
+    background: #e5e7eb;
+}
+.btn-submit {
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 24px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.btn-submit:hover {
+    background: #174bbd;
+}
