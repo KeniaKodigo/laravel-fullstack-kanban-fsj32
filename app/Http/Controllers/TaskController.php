@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreTaskRequest;
+use App\Http\Requests\UpdateTaskRequest;
 use App\Models\Task;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class TaskController extends Controller
@@ -25,12 +27,32 @@ class TaskController extends Controller
 
     // metodo que retorne la vista del formulario
     public function formRegister(){
-        return view('tasks.register');
+        //select id, name from users
+        $users = User::select('id', 'name')->get();
+        return view('tasks.register', compact('users'));
     }
 
     // crear una tarea
     public function store(StoreTaskRequest $request){
-        Task::create($request->all());
-        
+        Task::create($request->all()); //insertar datos
+        return redirect()->route('tasks.list')->with('success', 'Tarea registrada exitosamente');
+    }
+
+
+    // retornando la vista para editar una tarea
+    public function formEdit(Task $task){
+        // select title, description, due_date from tasks where id = $idTask
+        // $task = Task::select('title', 'description', 'due_date')->where('id',2)->get();
+        // $task = Task::find($idTask); //devuelve un elemento por id
+        return view('tasks.edit', compact('task'));
+    }
+
+
+    // actualizar una tarea por id
+    public function update(UpdateTaskRequest $request, $taskId){
+        // update tasks set title = ?, description = ?, due_date = ? where id = ?
+        $task = Task::find($taskId);
+        $task->update($request->all());
+        return redirect()->route('tasks.list')->with('success', 'Se actualizaron los datos!');
     }
 }

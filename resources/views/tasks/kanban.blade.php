@@ -1,6 +1,19 @@
 @extends('home')
 
 @section('content-home')
+    {{-- creamos la alerta a travez de sessiones --}}
+    @if (session('success'))
+        <div class="position-fixed top-0 end-0 p-3" style="z-index: 1055">
+            <div id="toastSuccess" class="toast align-items-center text-white bg-success border-0 show" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="d-flex">
+                    <div class="toast-body">
+                        {{ session('success') }}
+                    </div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+    @endif
 
     <h6 class="text-success">{{ $saludo }}</h6>
     <h1 class="title">Proyecto Kanban FSJ32</h1>
@@ -20,7 +33,7 @@
                     <p class="m-0"><small><b>Prioridad: </b> {{ $item->priority }}</small></p>
                     <p class="m-0"><small><b>Fecha Limite: </b> {{ $item->due_date }}</small></p>
                     <div>
-                        <a href="#" class="btn btn-warning btn-sm mt-1"><i class="bi bi-pencil-square"></i></a>
+                        <a href="{{ route('tasks.edit', $item->id) }}" class="btn btn-warning btn-sm mt-1"><i class="bi bi-pencil-square"></i></a>
                     </div>
                 </div>
             @endforeach
@@ -35,7 +48,7 @@
                     <p class="m-0"><small><b>Prioridad: </b> {{ $item->priority }}</small></p>
                     <p class="m-0"><small><b>Fecha Limite: </b> {{ $item->due_date }}</small></p>
                     <div>
-                        <a href="#" class="btn btn-warning btn-sm mt-1"><i class="bi bi-pencil-square"></i></a>
+                        <a href="{{ route('tasks.edit', $item->id) }}" class="btn btn-warning btn-sm mt-1"><i class="bi bi-pencil-square"></i></a>
                     </div>
                 </div>
             @endforeach
