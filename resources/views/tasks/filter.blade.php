@@ -4,7 +4,8 @@
     <h1 class="title">Generador de Reportes de Tareas 📄</h1>
     <h2 class="subtitle">Filtra tareas por estado y/o prioridad (opcional) para generar el PDF</h2>
 
-    <form method="POST" action="" target="__blank">
+    <form method="POST" action="{{ route('tasks.report') }}" target="__blank">
+        @method('GET')
         <div class="row g-3 align-items-end">
 
             <div class="col-md-5">
@@ -13,7 +14,7 @@
                     <option value="">Todas los Estados</option> 
                     <option value="pendiente">pendiente</option>
                     <option value="en proceso">en proceso</option> 
-                    <option value="completada">completada</option> 
+                    <option value="completado">completado</option> 
                 </select>
             </div>
 
